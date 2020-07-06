@@ -5,9 +5,10 @@ import { todoListState } from '../../atoms/todoList'
 
 import { filteredTodoListState } from '../../selectors/TodoList'
 
-import { TodoListStats } from './TodoListStats'
-import { TodoListFilters } from './TodoListFilters'
-import { TodoItemCreator } from './TodoItemCreator'
+import TodoListStats from './TodoListStats'
+import TodoListFilters from './TodoListFilters'
+import TodoItemCreator from './TodoItemCreator'
+import TodoItem from './TodoItem'
 
 export const TodoList: FC = () => {
   // const todoList = useRecoilValue(todoListState);
@@ -15,12 +16,12 @@ export const TodoList: FC = () => {
 
   return (
     <>
-      {/* <TodoListStats> */}
-      {/* <TodoListFilters> */}
-      <TodoItemCreator>
+      <TodoListStats />
+      <TodoListFilters />
+      <TodoItemCreator />
 
       {todoList.map((todoItem) => (
-        <TodoItem key={todoItem.id} item={todoItem}>
+        <TodoItem key={todoItem.id} item={todoItem} />
       ))}
     </>
   )
